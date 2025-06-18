@@ -7,6 +7,9 @@
 该模块使用FTCS（Forward-Time Central-Space）有限差分法求解一维波动方程。
 波动方程形式：∂²u/∂t² = a² * ∂²u/∂x²
 """
+该模块使用FTCS（Forward-Time Central-Space）有限差分法求解一维波动方程。
+波动方程形式：∂²u/∂t² = a² * ∂²u/∂x²
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -111,9 +114,9 @@ if __name__ == "__main__":
     fig = plt.figure(figsize=(10, 6))
     ax = fig.add_subplot(111, xlim=(0, params['L']), ylim=(u_sol.min() * 1.1, u_sol.max() * 1.1))
     line, = ax.plot([], [], 'g-', lw=2)  # 创建绿色线条对象
-    ax.set_title("一维波动方程求解 (FTCS方法)")
-    ax.set_xlabel("位置 (m)")
-    ax.set_ylabel("位移")
+    ax.set_title("1D Wave Equation (FTCS)")
+    ax.set_xlabel("Position (m)")
+    ax.set_ylabel("Displacement")
 
     # 动画更新函数
     def update(frame):
@@ -128,6 +131,4 @@ if __name__ == "__main__":
     ani = FuncAnimation(fig, update, frames=t_sol.size, interval=1, blit=True)
     
     # 显示动画
-    plt.show()
-    ani = FuncAnimation(fig, update, frames=t_sol.size, interval=1, blit=True)
     plt.show()
